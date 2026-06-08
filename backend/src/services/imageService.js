@@ -3,6 +3,12 @@ const { OpenAI } = require("openai");
 // Modelo configuravel via .env (padrao: gpt-5-image-mini ~$0.20/img)
 const IMAGE_MODEL = process.env.IMAGE_MODEL || "openai/gpt-5-image-mini";
 
+// Provider preferido: "Google AI Studio" (barato) ou "Google Vertex AI" (enterprise)
+// Deixe vazio para o OpenRouter escolher automaticamente
+const PROVIDER_ORDER = process.env.PROVIDER_ORDER
+  ? process.env.PROVIDER_ORDER.split(",").map((p) => p.trim())
+  : ["Google AI Studio"];
+
 class ImageService {
   constructor() {
     this.client = new OpenAI({
@@ -26,6 +32,11 @@ class ImageService {
     const response = await this.client.chat.completions.create({
       model: IMAGE_MODEL,
       modalities: ["image", "text"],
+      // Força o provider preferido no OpenRouter (evita roteamento para Vertex AI mais caro)
+      provider: {
+        order: PROVIDER_ORDER,
+        allow_fallbacks: true, // usa Vertex como fallback se AI Studio estiver fora
+      },
       messages: [
         {
           role: "user",
