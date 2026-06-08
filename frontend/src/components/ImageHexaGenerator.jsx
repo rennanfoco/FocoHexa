@@ -46,7 +46,7 @@ export default function ImageHexaGenerator() {
       <div className="generator-header">
         <div className="header-logo">
           <span className="logo-foco">FOCO</span>
-          <span className="logo-hexa">TREND</span>
+          <span className="logo-hexa">HEXA</span>
         </div>
         <h1>Seu Avatar Personalizado</h1>
         <p>Crie sua figurinha de colecao estilo Copa do Mundo</p>
