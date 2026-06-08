@@ -1,8 +1,14 @@
 import axios from "axios";
 
+// Em producao: VITE_API_URL aponta para o backend no Render
+// Em desenvolvimento: usa o proxy do Vite (/api -> localhost:3000)
+const baseURL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/api`
+  : "/api";
+
 export const api = axios.create({
-  baseURL: "/api",
-  timeout: 300000, // 5 minutos — gpt-5.4-image-2 pode demorar ate 3 min
+  baseURL,
+  timeout: 300000,
 });
 
 api.interceptors.response.use(
