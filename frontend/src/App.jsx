@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/generator.css';
 import './styles/encerramento.css';
 
-const FIGURINHAS_GERADAS = 'XXX';
+const FIGURINHAS_GERADAS = '1.400';
 
 export default function App() {
   return (
