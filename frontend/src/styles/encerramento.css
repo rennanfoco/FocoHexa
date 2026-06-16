@@ -7,10 +7,10 @@
 }
 
 .encerramento-card {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 64px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.10);
   padding: 56px 48px;
   max-width: 480px;
   width: 100%;
