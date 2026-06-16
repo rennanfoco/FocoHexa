@@ -78,7 +78,8 @@
 .enc-coracao {
   font-size: 5rem;
   line-height: 1;
-  filter: drop-shadow(0 4px 16px rgba(204,0,0,0.30));
+  color: var(--red);
+  filter: drop-shadow(0 4px 16px rgba(204,0,0,0.40));
   animation: pulse-heart 1.8s ease-in-out infinite;
 }
 
