@@ -25,7 +25,7 @@ export default function App() {
           <span className="enc-label">figurinhas geradas</span>
         </div>
 
-        <div className="enc-coracao">❤</div>
+        <div className="enc-coracao">❤️</div>
 
         <p className="enc-rodape">Foco Aluguel de Carros</p>
       </div>
